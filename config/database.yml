@@ -12,7 +12,7 @@ development:
 
 test:
   <<: *default
-  database: <%= ENV.fetch("POSTGRES_DB", "my_website_test") %>
+  database: <%= ENV.fetch("POSTGRES_TEST_DB") %>
 
 production:
   <<: *default
