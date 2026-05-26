@@ -7,9 +7,11 @@ ENV RAILS_ENV=development
 ENV BUNDLER_VERSION 2.3.14
 
 RUN apt-get update -qq \
-    && apt-get install build-essential \
-                       gosu \
-                    -y vim-gtk \
+    && apt-get install -y build-essential \
+                          gosu \
+                          vim-gtk \
+                          libpq-dev \
+                          postgresql-client \
     && rm -rf /var/lib/apt/lists/* \
     && curl -fsSL https://bun.sh/install | bash \
     && export BUN_INSTALL="$HOME/.bun" \
